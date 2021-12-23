@@ -7,7 +7,7 @@ const useCart = (products) => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        if (products.lenght) {
+        if (products.length) {
             const savedCart = getStoredCart();
             const storedCart = [];
             for (const key in savedCart) {
@@ -20,8 +20,7 @@ const useCart = (products) => {
             }
             setCart(storedCart);
         }
-
     }, [products]);
-    return [cart];
+    return [cart, setCart];
 }
 export default useCart;
